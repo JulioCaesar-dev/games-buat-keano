@@ -1,0 +1,1907 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Games for You, Keano Cantik 🍊</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&family=Space+Mono&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --orange:#f49a52;
+  --peach:#ffc99e;
+  --light:#fff0df;
+  --cream:#fffaf2;
+  --dark:#492b20;
+  --brown:#744a34;
+  --muted:#a98269;
+  --line:#e9c8a9;
+  --white:#fffdf9;
+}
+
+* {box-sizing:border-box;margin:0;padding:0}
+
+html {scroll-behavior:smooth}
+
+body {
+  background:var(--cream);
+  color:var(--dark);
+  font-family:'DM Sans',sans-serif;
+}
+
+button,input,textarea {font:inherit}
+button {cursor:pointer}
+a {text-decoration:none;color:inherit}
+
+nav {
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 6%;
+  background:#fffaf2ed;
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--line);
+}
+
+.logo {
+  font:12px 'Space Mono';
+  letter-spacing:2px;
+  color:#bd7137;
+}
+
+.nav-links {
+  display:flex;
+  gap:17px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.nav-links button {
+  background:none;
+  border:0;
+  color:var(--brown);
+  font-size:11px;
+  font-weight:700;
+}
+
+.nav-links button:hover,
+.nav-links button.active {color:var(--orange)}
+
+.page {
+  display:none;
+  min-height:80vh;
+  animation:appear .35s ease;
+}
+
+.page.active {display:block}
+
+@keyframes appear {
+  from {opacity:0;transform:translateY(10px)}
+  to {opacity:1;transform:translateY(0)}
+}
+
+.container {
+  max-width:1150px;
+  margin:auto;
+  padding:70px 6%;
+}
+
+.hero {
+  min-height:88vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:60px 20px;
+  background:
+    radial-gradient(circle at 15% 20%,#ffe0c0,transparent 35%),
+    radial-gradient(circle at 90% 80%,#ffd4b0,transparent 35%),
+    #fff6eb;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-content {max-width:750px;position:relative;z-index:2}
+
+.hero-label {
+  display:inline-block;
+  padding:9px 16px;
+  border-radius:30px;
+  background:white;
+  color:#b86a35;
+  font:10px 'Space Mono';
+  letter-spacing:2px;
+  border:1px solid var(--line);
+}
+
+.hero h1 {
+  font:clamp(49px,9vw,100px)/1.02 'DM Serif Display';
+  font-weight:400;
+  margin:25px 0;
+}
+
+.hero h1 span {
+  color:#e88b47;
+  display:block;
+  font-style:italic;
+}
+
+.hero p {
+  max-width:490px;
+  margin:0 auto 25px;
+  color:#8f6a51;
+  font-size:14px;
+  line-height:1.9;
+}
+
+.hero-art {
+  font-size:43px;
+  margin:22px;
+  animation:bob 3s ease-in-out infinite;
+}
+
+@keyframes bob {
+  50% {transform:translateY(-12px) rotate(5deg)}
+}
+
+.btn {
+  display:inline-block;
+  border:0;
+  border-radius:30px;
+  background:var(--orange);
+  color:white;
+  padding:14px 23px;
+  font-size:11px;
+  font-weight:800;
+  transition:.2s;
+}
+
+.btn:hover {background:#dc7935;transform:translateY(-3px)}
+
+.btn.light {
+  background:white;
+  color:var(--brown);
+  border:1px solid var(--line);
+}
+
+.btn.dark {
+  background:var(--dark);
+}
+
+.section-label {
+  font:10px 'Space Mono';
+  color:#cf8045;
+  letter-spacing:3px;
+}
+
+.heading {margin-bottom:30px}
+
+.heading h2 {
+  font:clamp(35px,6vw,55px) 'DM Serif Display';
+  margin:12px 0;
+  font-weight:400;
+}
+
+.heading p {
+  font-size:13px;
+  line-height:1.9;
+  color:var(--muted);
+}
+
+.panel {
+  background:white;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:25px;
+  box-shadow:0 8px 25px #9c653010;
+}
+
+.tag {
+  display:inline-block;
+  background:#fff0df;
+  color:#bd7137;
+  padding:7px 12px;
+  border-radius:20px;
+  font-size:10px;
+  font-weight:700;
+  margin:5px 4px 0 0;
+}
+
+/* HOME */
+
+.home-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  margin-top:40px;
+}
+
+.home-card {
+  background:white;
+  padding:22px;
+  border-radius:17px;
+  border:1px solid var(--line);
+  cursor:pointer;
+  transition:.2s;
+}
+
+.home-card:hover {
+  transform:translateY(-5px);
+  box-shadow:0 10px 25px #b86a351a;
+}
+
+.home-card .icon {font-size:29px}
+.home-card h3 {font:22px 'DM Serif Display';margin:10px 0}
+.home-card p {font-size:12px;color:var(--muted);line-height:1.7}
+
+/* PROFILE */
+
+.profile-layout {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  align-items:start;
+}
+
+.profile-photo {
+  width:100%;
+  height:520px;
+  object-fit:cover;
+  object-position:center 25%;
+  border-radius:20px;
+  display:block;
+}
+
+.profile-info h2 {
+  font:45px 'DM Serif Display';
+  margin:12px 0;
+}
+
+.profile-info p {
+  font-size:13px;
+  line-height:2;
+  color:#89674f;
+  margin:12px 0;
+}
+
+.profile-stats {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin:20px 0;
+}
+
+.stat {
+  background:#fff0df;
+  border-radius:12px;
+  padding:15px;
+}
+
+.stat strong {
+  display:block;
+  font:21px 'DM Serif Display';
+}
+
+.stat small {font-size:10px;color:#a16b48}
+
+.quote {
+  background:#fff0df;
+  padding:20px;
+  border-radius:15px;
+  font:italic 19px 'DM Serif Display';
+  line-height:1.6;
+  margin-top:20px;
+}
+
+.compliment-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:25px;
+}
+
+.compliment-card {
+  background:white;
+  padding:19px;
+  border:1px solid var(--line);
+  border-radius:15px;
+  font-size:12px;
+  line-height:1.8;
+  transition:.2s;
+}
+
+.compliment-card:hover {
+  background:#fff0df;
+  transform:translateY(-3px);
+}
+
+.compliment-card span {
+  display:block;
+  font-size:21px;
+  margin-bottom:8px;
+}
+
+/* ARCADE */
+
+.arcade-top {
+  background:var(--dark);
+  color:white;
+  padding:30px;
+  border-radius:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  margin-bottom:30px;
+}
+
+.arcade-top h3 {font:30px 'DM Serif Display'}
+.arcade-top p {font-size:12px;color:#f3c8a8;margin-top:7px}
+
+.score {
+  background:#ffffff17;
+  padding:15px 20px;
+  border-radius:15px;
+  text-align:center;
+  min-width:100px;
+}
+
+.score strong {
+  display:block;
+  font:30px 'DM Serif Display';
+  color:#ffc99e;
+}
+
+.score small {font-size:10px}
+
+.game-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+.game-card {
+  background:white;
+  border:1px solid var(--line);
+  border-radius:17px;
+  padding:20px;
+  transition:.2s;
+}
+
+.game-card:hover {
+  transform:translateY(-4px);
+  border-color:var(--orange);
+}
+
+.game-card .game-number {
+  font:10px 'Space Mono';
+  color:#bc8054;
+}
+
+.game-card .game-icon {
+  font-size:28px;
+  margin:12px 0;
+}
+
+.game-card h3 {font:21px 'DM Serif Display'}
+
+.game-card p {
+  font-size:11px;
+  line-height:1.7;
+  color:var(--muted);
+  margin:8px 0 14px;
+}
+
+.game-result {
+  font-size:11px;
+  color:#a65e2c;
+  line-height:1.8;
+  margin-top:12px;
+  min-height:20px;
+  overflow-wrap:anywhere;
+}
+
+.action {
+  border:0;
+  border-radius:30px;
+  background:#f3a363;
+  color:white;
+  font-size:10px;
+  font-weight:800;
+  padding:10px 15px;
+  transition:.2s;
+}
+
+.action:hover {background:#d77b39}
+
+.game-input {
+  background:#fffaf4;
+  border:1px solid var(--line);
+  padding:10px;
+  width:100%;
+  border-radius:9px;
+  margin:5px 0 9px;
+  font-size:12px;
+  outline:none;
+}
+
+.game-input:focus {border-color:var(--orange)}
+
+/* EXTRA ACTIVITIES */
+
+.extra-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:17px;
+}
+
+.extra-grid .panel h3 {
+  font:25px 'DM Serif Display';
+  margin:10px 0;
+}
+
+.extra-grid p {
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.8;
+  margin:8px 0;
+}
+
+canvas {
+  width:100%;
+  height:180px;
+  background:#fff5e9;
+  border:1px dashed #d9a77c;
+  border-radius:12px;
+  touch-action:none;
+}
+
+/* MUSIC */
+
+.music-layout {
+  display:grid;
+  grid-template-columns:260px 1fr;
+  gap:25px;
+  align-items:center;
+}
+
+.album {
+  aspect-ratio:1;
+  border-radius:20px;
+  background:linear-gradient(145deg,#ffc98f,#d97936);
+  color:#63391f;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+}
+
+.album strong {font:62px 'DM Serif Display'}
+.album span {font:10px 'Space Mono';letter-spacing:3px}
+.album div {font-size:35px;margin-top:20px}
+
+.music-layout iframe {
+  width:100%;
+  height:350px;
+  border:0;
+  border-radius:14px;
+}
+
+/* SECRET ROOM */
+
+.secret-box {
+  background:#492b20;
+  color:#fff5e9;
+  padding:45px;
+  border-radius:22px;
+  text-align:center;
+}
+
+.secret-box h2 {
+  font:43px 'DM Serif Display';
+  margin:15px 0;
+}
+
+.secret-box p {
+  max-width:580px;
+  margin:15px auto;
+  font-size:13px;
+  line-height:2;
+  color:#f3d4bb;
+}
+
+#secretMessage {display:none}
+
+footer {
+  padding:45px 20px;
+  text-align:center;
+  background:#fff0df;
+  color:#9c6845;
+  font-size:11px;
+  line-height:2;
+}
+
+#toast {
+  position:fixed;
+  bottom:22px;
+  left:50%;
+  transform:translateX(-50%);
+  background:var(--dark);
+  color:white;
+  padding:13px 20px;
+  border-radius:30px;
+  font-size:12px;
+  z-index:500;
+  opacity:0;
+  pointer-events:none;
+  transition:.3s;
+  text-align:center;
+  width:max-content;
+  max-width:90%;
+}
+#toast.show {opacity:1}
+
+.confetti {
+  position:fixed;
+  top:-30px;
+  z-index:400;
+  pointer-events:none;
+  animation:fall 3s linear forwards;
+}
+
+@keyframes fall {
+  to {transform:translateY(110vh) rotate(500deg);opacity:0}
+}
+
+@media(max-width:850px) {
+  .game-grid {grid-template-columns:repeat(2,1fr)}
+  .compliment-grid {grid-template-columns:repeat(2,1fr)}
+  .profile-layout {grid-template-columns:1fr}
+  .profile-photo {height:430px}
+  .music-layout {grid-template-columns:1fr}
+  .album {max-width:300px;width:100%;margin:auto}
+}
+
+@media(max-width:550px) {
+  nav {align-items:flex-start;gap:12px;flex-direction:column}
+  .nav-links {gap:13px}
+  .nav-links button {font-size:10px}
+  .home-grid,.game-grid,.compliment-grid,.extra-grid {grid-template-columns:1fr}
+  .arcade-top {flex-direction:column;align-items:flex-start}
+  .container {padding:55px 6%}
+  .profile-photo {height:360px}
+  .secret-box {padding:28px 18px}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">ORANGE.EXE 🍊</div>
+  <div class="nav-links">
+    <button class="active" onclick="showPage('home',this)">Home</button>
+    <button onclick="showPage('julio',this)">Julio</button>
+    <button onclick="showPage('keano',this)">Keano</button>
+    <button onclick="showPage('arcade',this)">Arcade</button>
+    <button onclick="showPage('extras',this)">Extras</button>
+    <button onclick="showPage('music',this)">Music</button>
+    <button onclick="showPage('secret',this)">Secret</button>
+  </div>
+</nav>
+
+<!-- HOME PAGE -->
+
+<main id="home" class="page active">
+
+  <header class="hero">
+    <div class="hero-content">
+      <div class="hero-label">A SPECIAL DIGITAL PLAYGROUND · 001</div>
+
+      <div class="hero-art">🍊 🧸 🍊</div>
+
+      <h1>
+        Games for you,
+        <span>Keano Cantik.</span>
+      </h1>
+
+      <p>
+        Hi, Keano! Welcome to your own little orange universe.
+        Since you're already in a good mood, let's make today
+        even more fun. Ada banyak game, random surprises,
+        and a few things I made just for you.
+      </p>
+
+      <button class="btn" onclick="showPage('arcade')">
+        LET'S PLAY SOMETHING ↗
+      </button>
+
+      <button class="btn light" onclick="showPage('keano')">
+        MEET THE MAIN CHARACTER
+      </button>
+
+      <div class="hero-art">✿ ･ﾟ: *✧ ･ﾟ:* 🍊</div>
+      <p style="font:10px 'Space Mono';letter-spacing:2px">
+        CREATED BY JULIO CAESAR · WITH EXTRA ORANGE ENERGY
+      </p>
+    </div>
+  </header>
+
+  <section class="container">
+    <div class="heading">
+      <div class="section-label">YOUR LITTLE UNIVERSE</div>
+      <h2>Where do you wanna go?</h2>
+      <p>Pick a room. No wrong choices here.</p>
+    </div>
+
+    <div class="home-grid">
+      <div class="home-card" onclick="showPage('julio')">
+        <div class="icon">🧑🏻‍💻</div>
+        <h3>Julio's Room</h3>
+        <p>Meet the person behind this website.</p>
+      </div>
+
+      <div class="home-card" onclick="showPage('keano')">
+        <div class="icon">🎀</div>
+        <h3>Keano's World</h3>
+        <p>A whole page dedicated to the main character.</p>
+      </div>
+
+      <div class="home-card" onclick="showPage('arcade')">
+        <div class="icon">🕹️</div>
+        <h3>Orange Arcade</h3>
+        <p>Thirty mini-games. Yes, thirty.</p>
+      </div>
+
+      <div class="home-card" onclick="showPage('extras')">
+        <div class="icon">🖍️</div>
+        <h3>Creative Corner</h3>
+        <p>Draw, write, and save little memories.</p>
+      </div>
+
+      <div class="home-card" onclick="showPage('music')">
+        <div class="icon">🎧</div>
+        <h3>Music Room</h3>
+        <p>Some LANY songs for your soundtrack.</p>
+      </div>
+
+      <div class="home-card" onclick="showPage('secret')">
+        <div class="icon">💌</div>
+        <h3>Secret Room</h3>
+        <p>One little message you haven't opened yet.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- JULIO PAGE -->
+
+<main id="julio" class="page">
+  <section class="container">
+
+    <div class="heading">
+      <div class="section-label">CHARACTER PROFILE · 001</div>
+      <h2>Meet the creator.</h2>
+      <p>The person who made this little orange universe happen.</p>
+    </div>
+
+    <div class="profile-layout">
+      <div>
+        <img class="profile-photo"
+          src=Seonghyeon//Seonghyeon.jpg
+          alt="Seonghyeon CORTIS">
+      </div>
+
+      <div class="profile-info panel">
+        <span class="tag">THE CREATOR</span>
+        <h2>Julio Caesar.</h2>
+        <p>
+          Face claim: Seonghyeon from CORTIS.
+
+          Julio is the creative mind behind this website.
+          He likes turning random ideas into little projects,
+          making people smile, and creating things that feel
+          personal rather than ordinary.
+        </p>
+
+        <div class="profile-stats">
+          <div class="stat">
+            <strong>001</strong>
+            <small>Character ID</small>
+          </div>
+          <div class="stat">
+            <strong>Dark Blue</strong>
+            <small>Favorite aesthetic</small>
+          </div>
+          <div class="stat">
+            <strong>Creative</strong>
+            <small>Personality</small>
+          </div>
+          <div class="stat">
+            <strong>Keano</strong>
+            <small>VIP visitor</small>
+          </div>
+        </div>
+
+        <div class="quote">
+          "I don't need a big occasion to make something nice.
+          Sometimes, a random Tuesday is enough."
+        </div>
+
+        <button class="btn" style="margin-top:20px"
+          onclick="showPage('keano')">
+          GO TO KEANO'S WORLD ↗
+        </button>
+      </div>
+    </div>
+
+    <p style="font-size:10px;color:#a98269;margin-top:15px">
+      Seonghyeon is used as Julio's fictional face claim.
+      <a href="https://coolkpop.com/idols/cortis-seonghyeon"
+         target="_blank" style="text-decoration:underline">
+        Photo and profile reference
+      </a>.
+    </p>
+
+  </section>
+</main>
+
+<!-- KEANO PAGE -->
+
+<main id="keano" class="page">
+  <section class="container">
+
+    <div class="heading">
+      <div class="section-label">CHARACTER PROFILE · 002</div>
+      <h2>The main character.</h2>
+      <p>Plot twist: the entire website is secretly about him.</p>
+    </div>
+
+    <div class="profile-layout">
+      <div>
+        <img class="profile-photo"
+          src=Keonho//Keonho.jpg
+          alt="Keonho CORTIS">
+
+        <div class="panel" style="margin-top:15px">
+          <h3 style="font:25px 'DM Serif Display'">
+            Keano's character card 🍊
+          </h3>
+          <span class="tag">MAIN CHARACTER</span>
+          <span class="tag">CERTIFIED CUTIE</span>
+          <span class="tag">ORANGE UNIVERSE VIP</span>
+          <span class="tag">PROFESSIONAL SUNSHINE</span>
+        </div>
+      </div>
+
+      <div class="profile-info panel">
+        <span class="tag">THE MAIN CHARACTER</span>
+        <h2>Keano Alaric.</h2>
+
+        <p>
+          Face claim: Keonho from CORTIS.
+
+          The main character of this entire universe.
+          Keano is described as someone with a playful
+          presence, an effortlessly charming vibe,
+          and a talent for making ordinary moments
+          feel a little more interesting.
+        </p>
+
+        <p>
+          Kalau ini film, Keano bukan cuma karakter tambahan.
+          He's literally the reason the story exists.
+          The plot, the soundtrack, the orange theme,
+          everything somehow leads back to him.
+        </p>
+
+        <div class="profile-stats">
+          <div class="stat">
+            <strong>100/10</strong>
+            <small>Character energy</small>
+          </div>
+          <div class="stat">
+            <strong>Unlimited</strong>
+            <small>Compliments</small>
+          </div>
+          <div class="stat">
+            <strong>VIP</strong>
+            <small>Website access</small>
+          </div>
+          <div class="stat">
+            <strong>Iconic</strong>
+            <small>Overall vibe</small>
+          </div>
+        </div>
+
+        <div class="quote">
+          "Some people are the plot twist.
+          You're the whole storyline."
+        </div>
+
+        <button class="btn" style="margin-top:20px"
+          onclick="complimentBurst()">
+          GIVE ME A COMPLIMENT
+        </button>
+
+        <div id="keanoRandom" class="game-result"></div>
+      </div>
+    </div>
+
+    <div style="margin-top:65px">
+      <div class="heading">
+        <div class="section-label">THE COMPLIMENT ARCHIVE</div>
+        <h2>Reasons Keano is iconic.</h2>
+        <p>
+          Ini bukan hasil voting. Ini keputusan final dari
+          website yang dibuat oleh Julio.
+        </p>
+      </div>
+
+      <div class="compliment-grid" id="compliments"></div>
+    </div>
+
+    <div class="panel" style="margin-top:35px">
+      <div class="section-label">A SMALL DISCLAIMER</div>
+      <h3 style="font:27px 'DM Serif Display';margin:12px 0">
+        Keano's official fan club.
+      </h3>
+      <p style="font-size:13px;line-height:2;color:#89674f">
+        Membership: one person. President: Julio Caesar.
+        Main character: Keano Alaric.
+        Benefits include unlimited compliments,
+        free entertainment, and absolutely no boring days.
+      </p>
+      <button class="btn" style="margin-top:15px"
+        onclick="showPage('arcade')">
+        BACK TO THE GAMES ↗
+      </button>
+    </div>
+
+    <p style="font-size:10px;color:#a98269;margin-top:15px">
+      Keonho is used as Keano's fictional face claim.
+      <a href="https://coolkpop.com/idols/cortis-keonho"
+         target="_blank" style="text-decoration:underline">
+        Photo and profile reference
+      </a>.
+    </p>
+  </section>
+</main>
+
+<!-- ARCADE PAGE -->
+
+<main id="arcade" class="page">
+  <section class="container">
+
+    <div class="heading">
+      <div class="section-label">THE ORANGE ARCADE · 030 GAMES</div>
+      <h2>Pick your game, Keano.</h2>
+      <p>
+        Thirty different mini-games. Some need strategy,
+        some need speed, and some are just pure chaos.
+      </p>
+    </div>
+
+    <div class="arcade-top">
+      <div>
+        <h3>Welcome to Orange Arcade.</h3>
+        <p>Achievement unlocked: you showed up. That's a win already.</p>
+      </div>
+      <div class="score">
+        <strong id="points">0</strong>
+        <small>GAME POINTS</small>
+      </div>
+    </div>
+
+    <div class="game-grid" id="gameGrid"></div>
+
+  </section>
+</main>
+
+<!-- EXTRAS PAGE -->
+
+<main id="extras" class="page">
+  <section class="container">
+
+    <div class="heading">
+      <div class="section-label">BEYOND THE ARCADE</div>
+      <h2>Creative little corner.</h2>
+      <p>Some extra activities for when you're done playing.</p>
+    </div>
+
+    <div class="extra-grid">
+
+      <div class="panel">
+        <div style="font-size:30px">🖍️</div>
+        <h3>Draw Something</h3>
+        <p>Draw whatever comes to your mind. No artistic skills required.</p>
+        <canvas id="drawing" width="600" height="220"></canvas>
+        <button class="action" onclick="clearCanvas()">CLEAR CANVAS</button>
+        <button class="action" onclick="downloadDrawing()">SAVE DRAWING</button>
+      </div>
+
+      <div class="panel">
+        <div style="font-size:30px">📓</div>
+        <h3>Little Diary</h3>
+        <p>Write a small moment from today that you want to remember.</p>
+        <textarea id="diary" rows="5"
+          placeholder="Today was nice because..."></textarea>
+        <button class="action" onclick="saveDiary()">SAVE ENTRY</button>
+        <div id="diaryResult" class="game-result"></div>
+      </div>
+
+      <div class="panel">
+        <div style="font-size:30px">🎯</div>
+        <h3>Today's Tiny Mission</h3>
+        <p id="mission">Your mission is waiting.</p>
+        <button class="action" onclick="newMission()">NEW MISSION</button>
+      </div>
+
+      <div class="panel">
+        <div style="font-size:30px">📦</div>
+        <h3>My Achievement Shelf</h3>
+        <p>Every game you finish adds to your point collection.</p>
+        <h2 id="achievementPoints"
+          style="font:40px 'DM Serif Display';color:#d67c3e">0</h2>
+        <p>total points collected</p>
+        <button class="action" onclick="showPage('arcade')">
+          COLLECT MORE POINTS
+        </button>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<!-- MUSIC PAGE -->
+
+<main id="music" class="page">
+  <section class="container">
+
+    <div class="heading">
+      <div class="section-label">SOUNDTRACK FOR THE MAIN CHARACTER</div>
+      <h2>Keano's music room.</h2>
+      <p>
+        Good music, good mood, and absolutely no skips.
+        A little LANY session for you.
+      </p>
+    </div>
+
+    <div class="panel music-layout">
+      <div class="album">
+        <strong>LANY</strong>
+        <span>ORANGE EDITION</span>
+        <div>🍊 🎧 🍊</div>
+      </div>
+
+      <div>
+        <h2 style="font:37px 'DM Serif Display'">Now playing: LANY.</h2>
+        <p style="font-size:13px;color:#a98269;line-height:1.8;margin:12px 0">
+          Your music corner is ready. Listen to LANY's tracks
+          while exploring the rest of this website.
+        </p>
+
+        <iframe
+          src="https://open.spotify.com/embed/artist/49tQo2QULno7gxHutgccqF?utm_source=generator"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:25px">
+      <h3 style="font:26px 'DM Serif Display'">A few LANY favorites.</h3>
+      <p style="font-size:12px;color:#a98269;line-height:2;margin-top:10px">
+        Super Far · ILYSB · Thick And Thin · Malibu Nights ·
+        13 · You! · DNA · Mean It.
+      </p>
+    </div>
+  </section>
+</main>
+
+<!-- SECRET PAGE -->
+
+<main id="secret" class="page">
+  <section class="container">
+    <div class="secret-box">
+      <div style="font-size:45px">🍊 💌 🍊</div>
+
+      <div class="section-label" style="color:#ffc99e;margin-top:20px">
+        A LITTLE MESSAGE FROM JULIO
+      </div>
+
+      <h2>One last thing, Keano.</h2>
+
+      <p>
+        So, you made it to the final room.
+        Congrats, you've officially explored the whole universe.
+        But there's one more thing waiting here.
+      </p>
+
+      <button class="btn" onclick="openSecret()">
+        UNLOCK YOUR MESSAGE
+      </button>
+
+      <div id="secretMessage">
+        <p>
+          Dear Keano,
+          <br><br>
+          I made this website because I wanted to give you
+          something a little different. Not just a message,
+          not just a random compliment, but a whole collection
+          of tiny things you can explore whenever you feel like it.
+          <br><br>
+          I hope you keep finding reasons to laugh,
+          keep enjoying the little things, and never forget
+          how much good energy you bring into the world.
+          <br><br>
+          You're a pretty cool person, and this little website
+          is just one way to remind you of that.
+          <br><br>
+          Keep being you, Keano cantik.
+          <br><br>
+          With care,
+          <br>
+          Julio Caesar. ♡
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div style="font-size:27px">🍊 ♡ 🍊</div>
+  <p>ORANGE.EXE — GAMES FOR YOU, KEANO CANTIK.</p>
+  <p>Made with care by Julio Caesar.</p>
+  <p>One little universe. Thirty games. Unlimited good vibes.</p>
+  <p>© 2026 · END OF THE ORANGE STORY.</p>
+</footer>
+
+<div id="toast"></div>
+
+<script>
+
+// ==========================================
+// PAGE NAVIGATION
+// ==========================================
+
+function showPage(id, button) {
+  document.querySelectorAll(".page").forEach(page => {
+    page.classList.remove("active");
+  });
+
+  document.getElementById(id).classList.add("active");
+
+  document.querySelectorAll(".nav-links button").forEach(btn => {
+    btn.classList.remove("active");
+  });
+
+  if (button) button.classList.add("active");
+
+  document.querySelectorAll(".nav-links button").forEach(btn => {
+    if (btn.textContent.toLowerCase() === id) {
+      btn.classList.add("active");
+    }
+  });
+
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+// ==========================================
+// GENERAL SYSTEM
+// ==========================================
+
+let points = 0;
+
+function addPoint(amount=5) {
+  points += amount;
+  document.getElementById("points").innerText = points;
+  document.getElementById("achievementPoints").innerText = points;
+}
+
+function toast(message) {
+  const t = document.getElementById("toast");
+  t.innerText = message;
+  t.classList.add("show");
+
+  setTimeout(() => t.classList.remove("show"),2200);
+}
+
+function random(array) {
+  return array[Math.floor(Math.random()*array.length)];
+}
+
+function complimentBurst() {
+  const messages = [
+    "Keano, your presence is genuinely a good thing.",
+    "Pretty face, lovely energy, and a whole lot of charm.",
+    "You're the type of person who makes a day feel lighter.",
+    "Being effortlessly iconic is apparently your thing.",
+    "Your smile deserves its own appreciation page.",
+    "You're not just a character. You're the entire plot.",
+    "Certified cute. No further explanation needed.",
+    "Your personality is a whole green flag collection."
+  ];
+
+  document.getElementById("keanoRandom").innerText =
+    random(messages);
+}
+
+// ==========================================
+// KEANO COMPLIMENT ARCHIVE
+// ==========================================
+
+const praises = [
+  ["🍊","You're literally the highlight of this universe."],
+  ["🎀","Your charm deserves a separate category."],
+  ["☀️","Your presence has main character energy."],
+  ["🧸","You're cute in a way that's hard to explain."],
+  ["✨","Your vibe is honestly unmatched."],
+  ["🌷","You make ordinary moments feel special."],
+  ["💌","You deserve appreciation without needing a reason."],
+  ["🍰","Sweet energy, zero effort required."],
+  ["🪞","A whole aesthetic without even trying."],
+  ["⭐","You deserve a standing ovation for existing."],
+  ["🧡","You're someone's favorite notification."],
+  ["🌤️","Good energy looks good on you."],
+  ["🎧","Even your imaginary soundtrack is iconic."],
+  ["🧃","A walking reminder that life has fun moments."],
+  ["🫧","You have a personality worth getting to know."],
+  ["🐣","Too charming for an ordinary character card."],
+  ["🍯","Your little quirks make you memorable."],
+  ["🌼","You deserve kindness on regular days too."],
+  ["💫","The world is more interesting with your energy."],
+  ["🎨","You make the whole picture more colorful."]
+];
+
+document.getElementById("compliments").innerHTML =
+  praises.map(item => `
+    <div class="compliment-card">
+      <span>${item[0]}</span>${item[1]}
+    </div>
+  `).join("");
+
+// ==========================================
+// 30 DIFFERENT MINI GAMES
+// ==========================================
+
+const games = [
+  ["01","🎯","Target Tap","Tap the button to collect 10 points."],
+  ["02","✂️","Rock Paper Scissors","Play a quick round against Julio."],
+  ["03","🪙","Coin Flip","Guess heads or tails."],
+  ["04","🎲","Dice Challenge","Roll a dice and beat the target."],
+  ["05","🔢","Number Detective","Guess the secret number."],
+  ["06","🧠","Quick Math","Solve a random math question."],
+  ["07","🔤","Word Scramble","Unscramble the hidden word."],
+  ["08","😀","Emoji Decoder","Guess the phrase from emojis."],
+  ["09","🎨","Color Memory","Remember the color sequence."],
+  ["10","⚡","Reaction Test","Test how quickly you react."],
+  ["11","⌨️","Typing Sprint","Type the sentence correctly."],
+  ["12","🚪","Choose a Door","Three doors, three surprises."],
+  ["13","🎵","Music Trivia","Answer a music question."],
+  ["14","⚖️","This or That","Choose between two fun options."],
+  ["15","🧩","Riddle Time","Solve a little brain teaser."],
+  ["16","🍊","Orange Counter","Count all the oranges."],
+  ["17","👀","Odd One Out","Find the emoji that doesn't belong."],
+  ["18","🔮","Pattern Finder","Complete the number pattern."],
+  ["19","🎟️","Lucky Number","Find the number Julio picked."],
+  ["20","⭕","Mini Tic Tac Toe","Play X and O against the computer."],
+  ["21","✈️","Paper Plane","Choose a direction for your plane."],
+  ["22","🌈","Mood Matcher","Pick the color that matches your mood."],
+  ["23","🧠","Three Word Memory","Remember three random words."],
+  ["24","✍️","Finish the Sentence","Complete a funny sentence."],
+  ["25","🏆","Compliment Battle","Choose your compliment style."],
+  ["26","📖","Story Builder","Choose what happens next."],
+  ["27","🔍","Spot the Difference","Find the different text."],
+  ["28","👏","Rhythm Challenge","Tap as many times as you can."],
+  ["29","📅","Daily Mission","Complete a tiny positive mission."],
+  ["30","🎁","Mystery Box","Open a random digital surprise."]
+];
+
+const grid = document.getElementById("gameGrid");
+
+games.forEach((game,index) => {
+  grid.innerHTML += `
+    <article class="game-card">
+      <div class="game-number">GAME ${game[0]} / ORANGE ARCADE</div>
+      <div class="game-icon">${game[1]}</div>
+      <h3>${game[2]}</h3>
+      <p>${game[3]}</p>
+      <button class="action" onclick="playGame(${index+1})">
+        PLAY GAME
+      </button>
+      <div class="game-result" id="result${index+1}">
+        Ready when you are.
+      </div>
+    </article>
+  `;
+});
+
+function result(id,text) {
+  document.getElementById("result"+id).innerText = text;
+}
+
+// 01 TARGET TAP
+function game1() {
+  let count = 0;
+  const r = document.getElementById("result1");
+
+  r.innerHTML = `
+    <p>Click 10 times!</p>
+    <button class="action" id="tapButton">TAP ME!</button>
+    <p id="tapCount">0 / 10</p>
+  `;
+
+  document.getElementById("tapButton").onclick = () => {
+    count++;
+    document.getElementById("tapCount").innerText = count+" / 10";
+
+    if(count >= 10) {
+      result(1,"TARGET COMPLETED! +10 points");
+      addPoint(10);
+    }
+  };
+}
+
+// 02 ROCK PAPER SCISSORS
+function game2() {
+  const options = ["rock","paper","scissors"];
+  const user = prompt("Choose: rock, paper, or scissors");
+
+  if(!user) return;
+
+  const choice = user.toLowerCase();
+  if(!options.includes(choice)) {
+    result(2,"Please enter rock, paper, or scissors.");
+    return;
+  }
+
+  const cpu = random(options);
+  let text = "";
+
+  if(choice === cpu) text = "It's a tie!";
+  else if(
+    (choice==="rock" && cpu==="scissors") ||
+    (choice==="paper" && cpu==="rock") ||
+    (choice==="scissors" && cpu==="paper")
+  ) {
+    text = "You win! Julio loses this round.";
+    addPoint();
+  } else text = "Julio wins this round! Try again.";
+
+  result(2,"You: "+choice+" | Julio: "+cpu+". "+text);
+}
+
+// 03 COIN FLIP
+function game3() {
+  const answer = prompt("Guess heads or tails:");
+  if(!answer) return;
+
+  const flip = random(["heads","tails"]);
+  result(3,"The coin landed on "+flip+". "+
+    (answer.toLowerCase()===flip ? "Correct guess! +5 points." : "Nice try!"));
+
+  if(answer.toLowerCase()===flip) addPoint();
+}
+
+// 04 DICE
+function game4() {
+  const roll = Math.floor(Math.random()*6)+1;
+  result(4,"You rolled "+roll+"! "+
+    (roll>=4 ? "Nice roll! +5 points." : "One more round?"));
+
+  if(roll>=4) addPoint();
+}
+
+// 05 NUMBER DETECTIVE
+function game5() {
+  const secret = Math.floor(Math.random()*10)+1;
+  const guess = Number(prompt("Guess a number from 1 to 10:"));
+
+  if(!guess) return;
+
+  if(guess===secret) {
+    result(5,"Correct! Detective Keano wins. +10 points.");
+    addPoint(10);
+  } else {
+    result(5,"The answer was "+secret+". Case closed!");
+  }
+}
+
+// 06 QUICK MATH
+function game6() {
+  const a = Math.floor(Math.random()*12)+2;
+  const b = Math.floor(Math.random()*10)+1;
+  const answer = Number(prompt(a+" + "+b+" = ?"));
+
+  if(!answer && answer!==0) return;
+
+  if(answer===a+b) {
+    result(6,"Correct! Math genius alert. +5 points.");
+    addPoint();
+  } else result(6,"Not quite! The answer is "+(a+b)+".");
+}
+
+// 07 WORD SCRAMBLE
+function game7() {
+  const words = ["ORANGE","HAPPY","SUNSHINE","CUTIE","SMILE"];
+  const word = random(words);
+  const scrambled = word.split("").sort(()=>Math.random()-.5).join("");
+
+  const answer = prompt("Unscramble this word: "+scrambled);
+
+  if(!answer) return;
+
+  if(answer.toUpperCase()===word) {
+    result(7,"Correct! You solved it. +5 points.");
+    addPoint();
+  } else result(7,"The word was "+word+". Good try!");
+}
+
+// 08 EMOJI DECODER
+function game8() {
+  const questions = [
+    ["🌞🌻","SUNSHINE"],
+    ["🍦☀️","SUMMER"],
+    ["🌙⭐","NIGHT"],
+    ["🎧🎵","MUSIC"],
+    ["🍊🧃","ORANGE JUICE"]
+  ];
+
+  const q = random(questions);
+  const answer = prompt("Decode this emoji: "+q[0]);
+
+  if(!answer) return;
+
+  if(answer.toUpperCase()===q[1]) {
+    result(8,"Exactly! Emoji expert. +5 points.");
+    addPoint();
+  } else result(8,"The answer was "+q[1]+".");
+}
+
+// 09 COLOR MEMORY
+function game9() {
+  const colors = ["ORANGE","YELLOW","PINK","BLUE"];
+  const sequence = [
+    random(colors),random(colors),random(colors)
+  ];
+
+  alert("Remember these colors:\n"+sequence.join(" - "));
+  const answer = prompt("Type them in the same order, separated by spaces:");
+
+  if(!answer) return;
+
+  if(answer.toUpperCase().trim()===sequence.join(" ")) {
+    result(9,"Perfect memory! +10 points.");
+    addPoint(10);
+  } else result(9,"Sequence: "+sequence.join(" - "));
+}
+
+// 10 REACTION TEST
+function game10() {
+  const r = document.getElementById("result10");
+
+  r.innerHTML = `
+    <p>Wait for the orange button to appear.</p>
+    <button id="reaction" class="action" disabled>WAIT...</button>
+  `;
+
+  const button = document.getElementById("reaction");
+  let ready = false;
+  let start;
+
+  button.onclick = () => {
+    if(!ready) {
+      result(10,"Too early! Try again.");
+      return;
+    }
+
+    const elapsed = Math.round(performance.now()-start);
+    result(10,"Your reaction: "+elapsed+" ms!");
+
+    if(elapsed<400) addPoint(10);
+    else addPoint(5);
+  };
+
+  setTimeout(()=>{
+    ready=true;
+    start=performance.now();
+    button.disabled=false;
+    button.innerText="CLICK NOW!";
+  },1500+Math.random()*2500);
+}
+
+// 11 TYPING SPRINT
+function game11() {
+  const sentence = "KEANO IS THE MAIN CHARACTER";
+  const answer = prompt("Type this exactly:\n"+sentence);
+
+  if(!answer) return;
+
+  if(answer===sentence) {
+    result(11,"Perfect typing! +10 points.");
+    addPoint(10);
+  } else result(11,"Almost! Check your spelling.");
+}
+
+// 12 CHOOSE A DOOR
+function game12() {
+  const door = prompt("Choose a door: 1, 2, or 3");
+
+  if(!["1","2","3"].includes(door)) return;
+
+  const gifts = {
+    1:"A virtual orange bouquet! 🍊💐",
+    2:"A free compliment package! 🎀",
+    3:"A lifetime supply of good vibes! ☀️"
+  };
+
+  result(12,"You opened door "+door+": "+gifts[door]);
+  addPoint();
+}
+
+// 13 MUSIC TRIVIA
+function game13() {
+  const answer = prompt(
+    "Which band sings the song 'ILYSB'?\nA. LANY\nB. Coldplay\nC. Maroon 5"
+  );
+
+  if(!answer) return;
+
+  if(answer.toUpperCase()==="A" || answer.toUpperCase()==="LANY") {
+    result(13,"Correct! LANY fan behavior. +5 points.");
+    addPoint();
+  } else result(13,"It's LANY! Go listen to the playlist.");
+}
+
+// 14 THIS OR THAT
+function game14() {
+  const choices = [
+    "Beach sunset OR mountain sunrise?",
+    "Ice cream OR cake?",
+    "Movie night OR music night?",
+    "Morning walk OR evening stroll?",
+    "Orange aesthetic OR peach aesthetic?",
+    "Summer vacation OR winter holiday?"
+  ];
+
+  result(14,random(choices));
+}
+
+// 15 RIDDLE TIME
+function game15() {
+  const answer = prompt(
+    "Riddle: What has hands but cannot clap?"
+  );
+
+  if(!answer) return;
+
+  if(answer.toLowerCase().includes("clock")) {
+    result(15,"Correct! It's a clock. +10 points.");
+    addPoint(10);
+  } else result(15,"Answer: A clock. Nice try!");
+}
+
+// 16 ORANGE COUNTER
+function game16() {
+  const count = Math.floor(Math.random()*6)+4;
+  const oranges = "🍊".repeat(count);
+  const answer = Number(prompt("Count the oranges:\n\n"+oranges));
+
+  if(!answer && answer!==0) return;
+
+  if(answer===count) {
+    result(16,"Correct count! +5 points.");
+    addPoint();
+  } else result(16,"There were "+count+" oranges!");
+}
+
+// 17 ODD ONE OUT
+function game17() {
+  const answer = prompt(
+    "Find the odd one out:\n🍎 🍎 🍎 🍊 🍎\nType the different fruit."
+  );
+
+  if(!answer) return;
+
+  if(answer.toLowerCase()==="orange") {
+    result(17,"You found it! +5 points.");
+    addPoint();
+  } else result(17,"It was the orange! 🍊");
+}
+
+// 18 PATTERN FINDER
+function game18() {
+  const answer = Number(prompt("Complete the pattern:\n2, 4, 6, 8, ?"));
+
+  if(!answer && answer!==0) return;
+
+  if(answer===10) {
+    result(18,"Pattern master! +5 points.");
+    addPoint();
+  } else result(18,"The answer is 10.");
+}
+
+// 19 LUCKY NUMBER
+function game19() {
+  const number = Math.floor(Math.random()*5)+1;
+  const answer = Number(prompt("Pick a number from 1 to 5:"));
+
+  if(!answer) return;
+
+  if(answer===number) {
+    result(19,"You matched Julio's number! +10 points.");
+    addPoint(10);
+  } else result(19,"Julio picked "+number+".");
+}
+
+// 20 TIC TAC TOE
+function game20() {
+  const r = document.getElementById("result20");
+  const cells = Array(9).fill("");
+
+  r.innerHTML = `
+    <p>You're X. Computer is O.</p>
+    <div id="ticGrid" style="display:grid;grid-template-columns:repeat(3,40px);gap:5px;margin-top:10px">
+    ${cells.map((v,i)=>`
+      <button class="action" style="height:40px;border-radius:8px"
+      onclick="ticMove(${i})"></button>
+    `).join("")}
+    </div>
+    <button class="action" style="margin-top:10px" onclick="game20()">RESET</button>
+  `;
+
+  window.ticCells = cells;
+  window.ticOver = false;
+}
+
+function ticMove(i) {
+  if(window.ticCells[i] || window.ticOver) return;
+
+  window.ticCells[i]="X";
+
+  let win = checkTic("X");
+
+  if(!win && window.ticCells.some(x=>!x)) {
+    let empty = window.ticCells
+      .map((v,i)=>v===""?i:-1).filter(i=>i>=0);
+
+    window.ticCells[random(empty)]="O";
+    win = checkTic("O");
+  }
+
+  const cells = document.querySelectorAll("#ticGrid button");
+
+  window.ticCells.forEach((v,i)=>{
+    cells[i].innerText=v;
+  });
+
+  if(win) {
+    window.ticOver=true;
+    result(20,win==="X"?"You win! +10 points.":"Computer wins! Try again.");
+    if(win==="X") addPoint(10);
+  } else if(!window.ticCells.includes("")) {
+    window.ticOver=true;
+    result(20,"It's a draw!");
+  }
+}
+
+function checkTic(player) {
+  const combos=[
+    [0,1,2],[3,4,5],[6,7,8],
+    [0,3,6],[1,4,7],[2,5,8],
+    [0,4,8],[2,4,6]
+  ];
+
+  return combos.some(c=>
+    c.every(i=>window.ticCells[i]===player)
+  ) ? player : "";
+}
+
+// 21 PAPER PLANE
+function game21() {
+  const direction = random([
+    "north","south","east","west"
+  ]);
+
+  const answer = prompt(
+    "Your paper plane is ready. Choose north, south, east, or west:"
+  );
+
+  if(!answer) return;
+
+  result(21,
+    answer.toLowerCase()===direction
+    ? "Perfect direction! Your plane landed safely. +5 points."
+    : "The wind took it "+direction+". Try another flight!"
+  );
+
+  if(answer.toLowerCase()===direction) addPoint();
+}
+
+// 22 MOOD MATCHER
+function game22() {
+  const moods = [
+    ["orange","Energetic and playful 🍊"],
+    ["yellow","Sunny and optimistic ☀️"],
+    ["pink","Soft and creative 🌷"],
+    ["green","Calm and refreshed 🌿"],
+    ["blue","Relaxed and peaceful 🌊"]
+  ];
+
+  const answer = prompt(
+    "Pick your mood color: orange, yellow, pink, green, or blue"
+  );
+
+  if(!answer) return;
+
+  const mood=moods.find(m=>m[0]===answer.toLowerCase());
+
+  result(22,mood?mood[1]:"That's a unique color choice!");
+}
+
+// 23 THREE WORD MEMORY
+function game23() {
+  const words = ["ORANGE","CLOUD","MUSIC"];
+
+  alert("Remember these three words:\n\n"+words.join(" · "));
+
+  const answer = prompt("Type all three words separated by spaces:");
+
+  if(!answer) return;
+
+  if(answer.toUpperCase().trim()===words.join(" ")) {
+    result(23,"Perfect memory! +10 points.");
+    addPoint(10);
+  } else result(23,"The words were ORANGE, CLOUD, MUSIC.");
+}
+
+// 24 FINISH THE SENTENCE
+function game24() {
+  const sentences = [
+    "My perfect weekend includes...",
+    "If I could eat one snack forever...",
+    "My dream holiday would be...",
+    "One song I never get tired of...",
+    "The funniest thing about me is..."
+  ];
+
+  const question=random(sentences);
+  const answer=prompt(question);
+
+  if(!answer) return;
+
+  result(24,"Officially added to Keano's lore: "+answer);
+  addPoint();
+}
+
+// 25 COMPLIMENT BATTLE
+function game25() {
+  const answer=prompt(
+    "Choose your compliment category:\n1. Personality\n2. Creativity\n3. Main character energy"
+  );
+
+  if(!answer) return;
+
+  const categories={
+    "1":"Your personality makes conversations worth having.",
+    "2":"Your ideas deserve their own spotlight.",
+    "3":"You are literally the plot of this whole universe."
+  };
+
+  result(25,categories[answer]||"Every category deserves a compliment.");
+  addPoint();
+}
+
+// 26 STORY BUILDER
+function game26() {
+  const answer=prompt(
+    "You're in an orange city. Where do you go?\n1. A tiny cafe\n2. A music store\n3. A flower shop"
+  );
+
+  if(!answer) return;
+
+  const story={
+    "1":"You found a cozy cafe with the best orange cake. 🍰",
+    "2":"You found a record store playing LANY. 🎧",
+    "3":"You found a beautiful bouquet of flowers. 💐"
+  };
+
+  result(26,story[answer]||"Your adventure is still waiting.");
+}
+
+// 27 SPOT THE DIFFERENCE
+function game27() {
+  const answer=prompt(
+    "Find the different character:\n\nAAAAAABAAAAAA\n\nWhich letter is different?"
+  );
+
+  if(!answer) return;
+
+  if(answer.toUpperCase()==="B") {
+    result(27,"Sharp eyes! You got it. +5 points.");
+    addPoint();
+  } else result(27,"The odd one was B!");
+}
+
+// 28 RHYTHM CHALLENGE
+function game28() {
+  let count=0;
+  let active=true;
+
+  const r=document.getElementById("result28");
+
+  r.innerHTML=`
+    <p>Tap as many times as you can in 5 seconds!</p>
+    <button class="action" id="rhythmButton">TAP!</button>
+    <p id="rhythmCount">0 taps</p>
+  `;
+
+  document.getElementById("rhythmButton").onclick=()=>{
+    if(!active) return;
+    count++;
+    document.getElementById("rhythmCount").innerText=count+" taps";
+  };
+
+  setTimeout(()=>{
+    active=false;
+    result(28,"You tapped "+count+" times! Nice energy.");
+    addPoint(Math.min(count,15));
+  },5000);
+}
+
+// 29 DAILY MISSION
+function game29() {
+  const missions=[
+    "Tell someone something nice today.",
+    "Listen to one favorite song without distractions.",
+    "Notice three little things you appreciate.",
+    "Take a short break and enjoy your surroundings.",
+    "Write down one thing you're proud of.",
+    "Share a funny story with someone."
+  ];
+
+  result(29,random(missions));
+  addPoint();
+}
+
+// 30 MYSTERY BOX
+function game30() {
+  const surprises=[
+    "You unlocked the imaginary orange crown. 👑",
+    "A virtual flower bouquet for you. 💐",
+    "A free compliment: you're genuinely lovely.",
+    "Your VIP badge is now activated. 🏅",
+    "You just received 100 imaginary orange candies. 🍬",
+    "A little reminder: keep enjoying your day."
+  ];
+
+  result(30,random(surprises));
+  addPoint(5);
+}
+
+// GAME SELECTOR
+function playGame(id) {
+  const handlers = {
+    1:game1,2:game2,3:game3,4:game4,5:game5,
+    6:game6,7:game7,8:game8,9:game9,10:game10,
+    11:game11,12:game12,13:game13,14:game14,15:game15,
+    16:game16,17:game17,18:game18,19:game19,20:game20,
+    21:game21,22:game22,23:game23,24:game24,25:game25,
+    26:game26,27:game27,28:game28,29:game29,30:game30
+  };
+
+  handlers[id]();
+}
+
+// ==========================================
+// CREATIVE CORNER
+// ==========================================
+
+const canvas=document.getElementById("drawing");
+const ctx=canvas.getContext("2d");
+
+ctx.lineWidth=5;
+ctx.lineCap="round";
+ctx.strokeStyle="#e88b47";
+
+let drawing=false;
+
+function getPos(e) {
+  const rect=canvas.getBoundingClientRect();
+
+  return {
+    x:(e.clientX-rect.left)*(canvas.width/rect.width),
+    y:(e.clientY-rect.top)*(canvas.height/rect.height)
+  };
+}
+
+canvas.addEventListener("pointerdown",e=>{
+  drawing=true;
+  const p=getPos(e);
+  ctx.beginPath();
+  ctx.moveTo(p.x,p.y);
+});
+
+canvas.addEventListener("pointermove",e=>{
+  if(!drawing) return;
+  const p=getPos(e);
+  ctx.lineTo(p.x,p.y);
+  ctx.stroke();
+});
+
+window.addEventListener("pointerup",()=>drawing=false);
+
+function clearCanvas() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+
+function downloadDrawing() {
+  const link=document.createElement("a");
+  link.download="keano-drawing.png";
+  link.href=canvas.toDataURL("image/png");
+  link.click();
+}
+
+function saveDiary() {
+  const value=document.getElementById("diary").value.trim();
+
+  if(!value) {
+    toast("Write something first!");
+    return;
+  }
+
+  try {
+    let entries=JSON.parse(
+      localStorage.getItem("orangeDiary")||"[]"
+    );
+
+    entries.push(value);
+    localStorage.setItem("orangeDiary",JSON.stringify(entries));
+
+    document.getElementById("diaryResult").innerText=
+      "Saved! Total diary entries: "+entries.length+" ♡";
+
+    document.getElementById("diary").value="";
+  } catch(error) {
+    toast("Browser storage unavailable.");
+  }
+}
+
+function newMission() {
+  const missions=[
+    "Send someone a random compliment.",
+    "Listen to your favorite LANY song.",
+    "Find something orange around you.",
+    "Write one thing that made you happy today.",
+    "Take a moment to appreciate your day.",
+    "Share a funny meme with someone.",
+    "Make a playlist for your current mood."
+  ];
+
+  document.getElementById("mission").innerText=random(missions);
+}
+
+// ==========================================
+// SECRET ROOM
+// ==========================================
+
+function openSecret() {
+  const message=document.getElementById("secretMessage");
+
+  message.style.display="block";
+  message.scrollIntoView({behavior:"smooth",block:"center"});
+
+  toast("SECRET MESSAGE UNLOCKED 💌");
+}
+
+</script>
+
+</body>
+</html>
